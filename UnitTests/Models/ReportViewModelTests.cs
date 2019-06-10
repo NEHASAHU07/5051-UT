@@ -29,11 +29,9 @@ namespace UnitTests.Models
            var myTest = new ReportViewModel();
 
             //Act
-            //var result = myTest.LogViewModel;
             var resultUsers = myTest.NumberOfUsers;
 
             //Assert
-            //Assert.IsNotNull(result);
             Assert.IsNotNull(resultUsers);
         }
 
@@ -68,14 +66,21 @@ namespace UnitTests.Models
         public void ReportViewModel_LogViewModel_Set_Default_Should_Pass()
         {
             //Arrange
+            
+            // Creating a new LogModel and adding it to the MyTest, with a PhoneID of "phone"
+            var myTest = new LogViewModel();
+            var myList = new List<LogModel>();
+            myList.Add(new LogModel { PhoneID = "Phone" });
+            var testReportViewModel = new ReportViewModel();
 
-            //act
+
+            //Act
+            testReportViewModel.LogViewModel = myTest;
+            var result = testReportViewModel.LogViewModel.LogList;
 
             //Assert
+            Assert.AreEqual("Phone", result[0].PhoneID);
         }
-
-
-
     }
 
 }
