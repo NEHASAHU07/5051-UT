@@ -23,17 +23,22 @@ namespace UnitTests.Models
         }
 
         [TestMethod]
-        public void ReportViewModel_NumberOfUsers_Set_Default_Should_Pass()
+        public void ReportViewModel_NumberOfUsers_Get_Default_Should_Pass()
         {
-            // Arrange
+            //Arrange
+           var myTest = new ReportViewModel();
 
             //Act
+            //var result = myTest.LogViewModel;
+            var resultUsers = myTest.NumberOfUsers;
 
             //Assert
+            //Assert.IsNotNull(result);
+            Assert.IsNotNull(resultUsers);
         }
 
         [TestMethod]
-        public void ReportViewModel_NumberOfUsers_Get_Default_Should_Pass()
+        public void ReportViewModel_NumberOfUsers_Set_Default_Should_Pass()
         {
             // Arrange
 
@@ -52,7 +57,7 @@ namespace UnitTests.Models
             //asset
 
         }
-
+        [TestMethod]
         public void ReportViewModel_LogViewModel_Set_Default_Should_Pass()
         {
             //Arrange
